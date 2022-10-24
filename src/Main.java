@@ -17,12 +17,38 @@ public class Main {
         return sum;
     }
 
-    public static void isLeapYear(int year) {
+    public static void outputIsLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println("Это високосный год!");
+            System.out.println(year + " - високосный год!");
         } else {
-            System.out.println("Этот год не високосный!");
+            System.out.println(year + " - год не високосный!");
         }
+    }
+
+    public static void currentVersionOS(int clientOS, int clientDeviceYear) {
+        if (clientOS == 0) {
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке!");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке!");
+            }
+        } else {
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке!");
+            } else {
+                System.out.println("Установите версию приложения для Android по ссылке!");
+            }
+        }
+    }
+
+    public static void calculationOfDeliveryTime(int deliveryDistance, int deliveryDate) {
+        if (deliveryDistance > 20) {
+            deliveryDate = deliveryDate + 1;
+        }
+        if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+            deliveryDate = deliveryDate + 1;
+        }
+        System.out.println("Время доставки составит " + deliveryDate + " дня(ей)!");
     }
 
     public static void main(String[] args) {
@@ -39,10 +65,18 @@ public class Main {
         printIssues(total);
 */
         System.out.println("Задание 1");
-        int year = 2024;
-        isLeapYear(year);
+        int year = 2023;
+        outputIsLeapYear(year);
 
+        System.out.println("Задание 2");
+        int clientOS = 0;
+        int clientDeviceYear = 2013;
+        currentVersionOS(clientOS, clientDeviceYear);
 
+        System.out.println("Задание 3");
+        int deliveryDistance = 95;
+        int deliveryDate = 1;
+        calculationOfDeliveryTime(deliveryDistance, deliveryDate);
 
     }
 }
