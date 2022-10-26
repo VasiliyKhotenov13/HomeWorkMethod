@@ -41,14 +41,25 @@ public class Main {
         }
     }
 
-    public static void calculationOfDeliveryTime(int deliveryDistance, int deliveryDate) {
+    public static void calculationOfDeliveryTime(int deliveryDistance) {
+        int deliveryDate = 1;
         if (deliveryDistance > 20) {
             deliveryDate = deliveryDate + 1;
         }
         if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             deliveryDate = deliveryDate + 1;
+            System.out.println("Время доставки составит " + deliveryDate + " дня(ей)!");
         }
-        System.out.println("Время доставки составит " + deliveryDate + " дня(ей)!");
+    }
+
+    public static void calculationOfDeliveryTime1(int deliveryDistance1) {
+        int deliveryDate1 = 1;
+        if (deliveryDistance1 >= 20 && deliveryDistance1 < 60) {
+            deliveryDate1++;
+        } else if (deliveryDistance1 >= 60 && deliveryDistance1 <= 100) {
+            deliveryDate1 = deliveryDate1 + 2;
+        }
+        System.out.println("Время доставки составит " + deliveryDate1 + " день/дня!");
     }
 
     public static void main(String[] args) {
@@ -75,8 +86,12 @@ public class Main {
 
         System.out.println("Задание 3");
         int deliveryDistance = 95;
-        int deliveryDate = 1;
-        calculationOfDeliveryTime(deliveryDistance, deliveryDate);
+        calculationOfDeliveryTime(deliveryDistance);
+
+        System.out.println("Задание 3 (исправленное)");
+        int deliveryDistance1 = 59;
+        calculationOfDeliveryTime1(deliveryDistance1);
+
 
     }
 }
