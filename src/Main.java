@@ -41,16 +41,6 @@ public class Main {
         }
     }
 
-    public static void calculationOfDeliveryTime(int deliveryDistance) {
-        int deliveryDate = 1;
-        if (deliveryDistance > 20) {
-            deliveryDate = deliveryDate + 1;
-        }
-        if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-            deliveryDate = deliveryDate + 1;
-            System.out.println("Время доставки составит " + deliveryDate + " дня(ей)!");
-        }
-    }
 
     public static void calculationOfDeliveryTime1(int deliveryDistance1) {
         int deliveryDate1 = 1;
@@ -83,10 +73,6 @@ public class Main {
         int clientOS = 0;
         int clientDeviceYear = 2013;
         currentVersionOS(clientOS, clientDeviceYear);
-
-        System.out.println("Задание 3");
-        int deliveryDistance = 95;
-        calculationOfDeliveryTime(deliveryDistance);
 
         System.out.println("Задание 3 (исправленное)");
         int deliveryDistance1 = 59;
